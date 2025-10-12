@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
-using TMPro; // важно: для TextMeshPro
+using TMPro; 
 
 public class DoorInteractor : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
-    [SerializeField] private float interactDistance = 3f;
+    [SerializeField] private float interactDistance = 1;
     [SerializeField] private KeyCode interactKey = KeyCode.E;
     [SerializeField] private LayerMask doorLayer;
-    [SerializeField] private GameObject hintText; // 👈 ссылка на надпись
+    [SerializeField] private GameObject hintText; 
     [SerializeField] private bool drawDebugRay = true;
 
     private FridgeDoor currentDoor = null;
@@ -39,23 +39,28 @@ public class DoorInteractor : MonoBehaviour
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, interactDistance, doorLayer))
+        
+        if (Physics.Raycast(ray, out hit, interactDistance, ~0))
         {
+            
             FridgeDoor door = hit.collider.GetComponentInParent<FridgeDoor>();
-
+            
             if (door != null)
             {
-                currentDoor = door;
+                
+                if (((1 << hit.collider.gameObject.layer) & doorLayer) != 0)
+                {
+                    currentDoor = door;
 
-                // показываем надпись
-                if (hintText != null && !hintText.activeSelf)
-                    hintText.SetActive(true);
+                    
+                    if (hintText != null && !hintText.activeSelf)
+                        hintText.SetActive(true);
 
-                return;
+                    return;
+                }
             }
         }
 
-        // если луч никуда не попал — скрываем надпись
         currentDoor = null;
         if (hintText != null && hintText.activeSelf)
             hintText.SetActive(false);

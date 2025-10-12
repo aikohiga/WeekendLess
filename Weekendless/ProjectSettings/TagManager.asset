@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Door
+  - Stone
+  - Sink
   layers:
   - Default
   - TransparentFX
@@ -12,7 +14,7 @@ TagManager:
   - Door
   - Water
   - UI
-  - 
+  - Sink
   - 
   - 
   - 
