@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 02d801ccdd3eaf148b3ab8c9f2df9880, type: 3}
       propertyPath: m_Name
-      value: Clock
+      value: clock
       objectReference: {fileID: 0}
     - target: {fileID: 3316992658331686828, guid: 02d801ccdd3eaf148b3ab8c9f2df9880, type: 3}
       propertyPath: m_LocalPosition.x
@@ -732,6 +732,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 10.904
       objectReference: {fileID: 0}
+    - target: {fileID: 3272922989394223298, guid: 0192825ffddd45d4eb99c6240c892406, type: 3}
+      propertyPath: m_TagString
+      value: Food
+      objectReference: {fileID: 0}
     - target: {fileID: 7811364293850568684, guid: 0192825ffddd45d4eb99c6240c892406, type: 3}
       propertyPath: m_LocalScale.x
       value: 52.27
@@ -874,6 +878,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4423045620967985251, guid: 0192825ffddd45d4eb99c6240c892406, type: 3}
       insertIndex: -1
       addedObject: {fileID: 534424766}
+    - targetCorrespondingSourceObject: {fileID: 3272922989394223298, guid: 0192825ffddd45d4eb99c6240c892406, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2028439880}
+    - targetCorrespondingSourceObject: {fileID: 3272922989394223298, guid: 0192825ffddd45d4eb99c6240c892406, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2028439881}
     - targetCorrespondingSourceObject: {fileID: 9051575456874662877, guid: 0192825ffddd45d4eb99c6240c892406, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1626914099}
@@ -1367,7 +1377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a13781a3f45207a4b92721935bf8f151, type: 3}
       propertyPath: m_Name
-      value: Retro cabinet
+      value: cabinet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2001,7 +2011,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b4da433443b954f49aff80b52442a70e, type: 2}
     - target: {fileID: 919132149155446097, guid: 649f0d66aec524848850e18422080846, type: 3}
       propertyPath: m_Name
-      value: Fridge
+      value: fridge
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2079,7 +2089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 650a5aa9684305846a43772f2b4cbc64, type: 3}
       propertyPath: m_Name
-      value: bc9503af31f3_old_carpet_min
+      value: carpet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2101,7 +2111,7 @@ GameObject:
   - component: {fileID: 462089181}
   - component: {fileID: 462089180}
   m_Layer: 0
-  m_Name: Cube (11)
+  m_Name: wall_bathroom_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2714,7 +2724,7 @@ GameObject:
   - component: {fileID: 557106436}
   - component: {fileID: 557106435}
   m_Layer: 0
-  m_Name: Cube (12)
+  m_Name: floor_bathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3320,7 +3330,7 @@ GameObject:
   - component: {fileID: 611831392}
   - component: {fileID: 611831391}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: wall_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3729,7 +3739,7 @@ GameObject:
   - component: {fileID: 662445472}
   - component: {fileID: 662445471}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: wall_up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4084,7 +4094,7 @@ GameObject:
   - component: {fileID: 670103341}
   - component: {fileID: 670103340}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: floor_all
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4754,7 +4764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6522ce1539ecaeb44812233f1433c188, type: 3}
       propertyPath: m_Name
-      value: Lamp2
+      value: lamp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -4882,7 +4892,7 @@ GameObject:
   - component: {fileID: 841703563}
   - component: {fileID: 841703562}
   m_Layer: 0
-  m_Name: Cube (14)
+  m_Name: wall_bathroom_left_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5442,7 +5452,7 @@ GameObject:
   - component: {fileID: 885829528}
   - component: {fileID: 885829527}
   m_Layer: 0
-  m_Name: Cube (8)
+  m_Name: wall_down_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5945,7 +5955,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2a9b6334842fd8941862806da501ec6d, type: 2}
     - target: {fileID: 919132149155446097, guid: 94cbbc378bcac8c43abbad7364523a55, type: 3}
       propertyPath: m_Name
-      value: stolik
+      value: table
       objectReference: {fileID: 0}
     - target: {fileID: 6745302439343835087, guid: 94cbbc378bcac8c43abbad7364523a55, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6021,7 +6031,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 82bbe77f8eebdb64d9f18b88bed57e73, type: 2}
     - target: {fileID: 919132149155446097, guid: 67c4fbbabe6516a4c9404e86ff6255e2, type: 3}
       propertyPath: m_Name
-      value: Sink
+      value: sink
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 67c4fbbabe6516a4c9404e86ff6255e2, type: 3}
       propertyPath: m_Layer
@@ -6054,7 +6064,7 @@ GameObject:
   - component: {fileID: 1067513816}
   - component: {fileID: 1067513815}
   m_Layer: 0
-  m_Name: Cube (5)
+  m_Name: wall_bathroom_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6943,7 +6953,7 @@ GameObject:
   - component: {fileID: 1161601423}
   - component: {fileID: 1161601422}
   m_Layer: 0
-  m_Name: Cube (6)
+  m_Name: wall_room_left_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7447,7 +7457,7 @@ GameObject:
   - component: {fileID: 1185545760}
   - component: {fileID: 1185545759}
   m_Layer: 0
-  m_Name: Cube (10)
+  m_Name: wall_bathroom_up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8222,7 +8232,7 @@ GameObject:
   - component: {fileID: 1304109883}
   - component: {fileID: 1304109882}
   m_Layer: 0
-  m_Name: Cube (13)
+  m_Name: wall_bathroom_left_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8755,7 +8765,7 @@ GameObject:
   - component: {fileID: 1356164779}
   - component: {fileID: 1356164778}
   m_Layer: 0
-  m_Name: Cube (9)
+  m_Name: wall_down_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9729,7 +9739,7 @@ GameObject:
   - component: {fileID: 1652605154}
   - component: {fileID: 1652605153}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: wall_room_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10188,7 +10198,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5a57764738f84c7448473c1d131859c4, type: 2}
     - target: {fileID: 919132149155446097, guid: 02324c085d31e8949a55088d4a99ab0a, type: 3}
       propertyPath: m_Name
-      value: soviettv_sp
+      value: tv
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10618,7 +10628,7 @@ GameObject:
   - component: {fileID: 1968339556}
   - component: {fileID: 1968339555}
   m_Layer: 0
-  m_Name: Cube (7)
+  m_Name: wall_room_left_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10958,6 +10968,49 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &2028439876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3272922989394223298, guid: 0192825ffddd45d4eb99c6240c892406, type: 3}
+  m_PrefabInstance: {fileID: 155684633}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2028439880
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028439876}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.004091749, y: 0.0026417547, z: 0.0034245066}
+  m_Center: {x: 0.0006597376, y: 0.00000028720208, z: -0.00037690395}
+--- !u!114 &2028439881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028439876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4379cf3e01d30d04e83154dc90889b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WashInteraction
+  interactionDistance: 3
+  playerCamera: {fileID: 522740964}
+  hintText: {fileID: 1494058440}
+  eatSound: {fileID: 8300000, guid: 46d762685d004df4aa88ccd139ed26de, type: 3}
+  destroyDelay: 0.1
 --- !u!1001 &2037989652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11020,7 +11073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b17f2539792c5bf4898e9fbd36221c79, type: 3}
       propertyPath: m_Name
-      value: SovetskijStol
+      value: desk
       objectReference: {fileID: 0}
     - target: {fileID: 1453809508725104628, guid: b17f2539792c5bf4898e9fbd36221c79, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -11100,7 +11153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a5e41d2aacc06b14a90593771933f273, type: 3}
       propertyPath: m_Name
-      value: tub
+      value: toilet
       objectReference: {fileID: 0}
     - target: {fileID: 3144463359778459708, guid: a5e41d2aacc06b14a90593771933f273, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11486,7 +11539,7 @@ GameObject:
   - component: {fileID: 2124416424}
   - component: {fileID: 2124416423}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: wall_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
