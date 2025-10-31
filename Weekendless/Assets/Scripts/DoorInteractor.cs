@@ -10,7 +10,7 @@ public class DoorInteractor : MonoBehaviour
     [SerializeField] private GameObject hintText; 
     [SerializeField] private bool drawDebugRay = true;
 
-    private FridgeDoor currentDoor = null;
+    private IInteractableDoor currentDoor = null;
 
     private void Start()
     {
@@ -43,7 +43,7 @@ public class DoorInteractor : MonoBehaviour
         if (Physics.Raycast(ray, out hit, interactDistance, ~0))
         {
             
-            FridgeDoor door = hit.collider.GetComponentInParent<FridgeDoor>();
+            IInteractableDoor door = hit.collider.GetComponentInParent<IInteractableDoor>();
             
             if (door != null)
             {
