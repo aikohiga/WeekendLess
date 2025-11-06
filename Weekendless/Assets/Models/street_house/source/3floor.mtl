@@ -1,0 +1,169 @@
+# MTL file - created by a modified js OBJExporter
+
+newmtl PB090716_storona
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pr 0.040909089148044586
+Pds 1
+Pl 1
+Pccns 1-1
+Prfl 0.5
+Pior 1.5
+Pshc 0 0 0
+Pshr 1
+Psi 1
+Psc 1 1 1
+Ka 1 1 1
+Kd 1 1 1
+Ke 0 0 0
+map_Kd PB090716_storona.png
+norm PB090716_storona.png
+map_Psim specularIntensityMap1.png
+
+newmtl PB090722_bok
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pr 0.040909089148044586
+Pds 1
+Pl 1
+Pccns 1-1
+Prfl 0.5
+Pior 1.5
+Pshc 0 0 0
+Pshr 1
+Psi 1
+Psc 1 1 1
+Ka 1 1 1
+Kd 1 1 1
+Ke 0 0 0
+map_Kd PB090722_bok.png
+norm PB090722_bok.png
+map_Psim specularIntensityMap2.png
+
+newmtl Material.001
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pr 0.5
+Pds 1
+Pl 1
+Ka 1 1 1
+Kd 0.800000011920929 0.800000011920929 0.800000011920929
+Ke 0 0 0
+
+newmtl Shifer-op
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pr 0.040909089148044586
+Pds 1
+Pl 1
+Ka 1 1 1
+Kd 1 1 1
+Ke 0 0 0
+map_Kd Shifer-op.png
+norm Shifer-op.png
+
+newmtl P3180195_hrusch
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pr 0.040909089148044586
+Pds 1
+Pl 1
+Pccns 1-1
+Prfl 0.5
+Pior 1.5
+Pshc 0 0 0
+Pshr 1
+Psi 1
+Psc 1 1 1
+Ka 1 1 1
+Kd 1 1 1
+Ke 0 0 0
+map_Kd P3180195_hrusch.png
+norm P3180195_hrusch.png
+map_Psim specularIntensityMap5.png
+
+newmtl P5120059_bob
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pr 0.5
+Pds 1
+Pl 1
+Ka 1 1 1
+Kd 1 1 1
+Ke 0 0 0
+map_Kd P5120059_bob.png
+
+newmtl PB090718_bob
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pr 0.040909089148044586
+Pds 1
+Pl 1
+Pccns 1-1
+Prfl 0.5
+Pior 1.5
+Pshc 0 0 0
+Pshr 1
+Psi 1
+Psc 1 1 1
+Ka 1 1 1
+Kd 1 1 1
+Ke 0 0 0
+map_Kd PB090718_bob.png
+norm PB090718_bob.png
+map_Psim specularIntensityMap7.png
+
+newmtl P5120059_trupo
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pr 0.040909089148044586
+Pds 1
+Pl 1
+Ka 1 1 1
+Kd 1 1 1
+Ke 0 0 0
+map_Kd P5120059_trupo.png
+norm P5120059_trupo.png
+
+newmtl [Color_006]
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pr 0.5
+Pds 1
+Pl 1
+Ka 1 1 1
+Kd 0.0915183499455452 0.0915183499455452 0.0915183499455452
+Ke 0 0 0
+
+newmtl [Color_C19]
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pr 0.5
+Pds 1
+Pl 1
+Ka 1 1 1
+Kd 0.1332085132598877 0.08021926134824753 0.04298701137304306
+Ke 0 0 0
+
+newmtl Material.002
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pr 0.040909089148044586
+Pds 1
+Pl 1
+Ka 1 1 1
+Kd 1 1 1
+Ke 0 0 0
+map_Kd Material.002.png
+norm Material.002.png

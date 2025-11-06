@@ -1,0 +1,71 @@
+# MTL file - created by a modified js OBJExporter
+
+newmtl Standard2
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pds 1
+Pl 1
+Pccns 1-1
+Prfl 0.5
+Pior 1.5
+Pshc 0 0 0
+Pshr 1
+Psi 1
+Psc 1 1 1
+Ka 1 1 1
+Kd 1 1 1
+Ke 0 0 0
+map_Kd Standard2.png
+norm Standard2.png
+map_Psim specularIntensityMap1.png
+
+newmtl Standa3
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pds 1
+Pl 1
+Pccns 1-1
+Prfl 0.5
+Pior 1.5
+Pshc 0 0 0
+Pshr 1
+Psc 1 1 1
+Ka 1 1 1
+Kd 1 1 1
+Ke 0 0 0
+map_Kd Standa3.png
+norm Standa3.png
+
+newmtl Standa4
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pds 1
+Pl 1
+Pccns 1-1
+Prfl 0.5
+Pior 1.5
+Pshc 0 0 0
+Pshr 1
+Psi 1
+Psc 1 1 1
+Ka 1 1 1
+Kd 1 1 1
+Ke 0 0 0
+map_Kd Standa4.png
+norm Standa4.png
+map_Psim specularIntensityMap3.png
+
+newmtl grey
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 1
+Pds 1
+Pl 1
+Ka 1 1 1
+Kd 1 1 1
+Ke 0 0 0
+map_Kd grey.png
+norm grey.png
