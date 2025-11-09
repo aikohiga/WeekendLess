@@ -8,6 +8,7 @@ TagManager:
   - Stone
   - Sink
   - Food
+  - Teleport
   layers:
   - Default
   - TransparentFX
