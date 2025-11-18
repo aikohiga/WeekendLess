@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using System.Collections;
 
 public class TeleportInteraction : MonoBehaviour
 {
@@ -13,21 +15,43 @@ public class TeleportInteraction : MonoBehaviour
     public Transform teleportTarget;
     public Transform playerTransform;
 
+    [Header("Ёффекты телепортации")]
+    public Image fadeImage;
+    public AudioClip teleportSound;
+    public float fadeDuration = 1f;
+    public float teleportDelay = 0.5f;
+
     private bool isNearObject = false;
+    private bool isTeleporting = false;
+    private AudioSource audioSource;
 
     void Start()
     {
         if (hintText != null)
             hintText.gameObject.SetActive(false);
+
+        if (fadeImage != null)
+        {
+            Color c = fadeImage.color;
+            c.a = 0;
+            fadeImage.color = c;
+        }
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     void Update()
     {
-        CheckObject();
-
-        if (isNearObject && Input.GetKeyDown(interactKey))
+        if (!isTeleporting)
         {
-            TeleportPlayer();
+            CheckObject();
+
+            if (isNearObject && Input.GetKeyDown(interactKey))
+            {
+                StartCoroutine(TeleportSequence());
+            }
         }
     }
 
@@ -60,28 +84,58 @@ public class TeleportInteraction : MonoBehaviour
         }
     }
 
-    void TeleportPlayer()
+    IEnumerator TeleportSequence()
     {
-        if (playerTransform == null || teleportTarget == null)
-            return;
-
-        CharacterController controller = playerTransform.GetComponent<CharacterController>();
-        if (controller != null)
-        {
-            controller.enabled = false;
-        }
-
-        playerTransform.position = teleportTarget.position;
-        playerTransform.rotation = teleportTarget.rotation;
-
-        if (controller != null)
-        {
-            controller.enabled = true;
-        }
+        isTeleporting = true;
 
         if (hintText != null)
             hintText.gameObject.SetActive(false);
 
+        if (teleportSound != null && audioSource != null)
+            audioSource.PlayOneShot(teleportSound);
+
+        if (fadeImage != null)
+        {
+            float t = 0;
+            while (t < fadeDuration)
+            {
+                t += Time.deltaTime;
+                Color c = fadeImage.color;
+                c.a = Mathf.Lerp(0, 1, t / fadeDuration);
+                fadeImage.color = c;
+                yield return null;
+            }
+        }
+
+        yield return new WaitForSeconds(teleportDelay);
+
+        if (playerTransform != null && teleportTarget != null)
+        {
+            CharacterController controller = playerTransform.GetComponent<CharacterController>();
+            if (controller != null)
+                controller.enabled = false;
+
+            playerTransform.position = teleportTarget.position;
+            playerTransform.rotation = teleportTarget.rotation;
+
+            if (controller != null)
+                controller.enabled = true;
+        }
+
+        if (fadeImage != null)
+        {
+            float t = 0;
+            while (t < fadeDuration)
+            {
+                t += Time.deltaTime;
+                Color c = fadeImage.color;
+                c.a = Mathf.Lerp(1, 0, t / fadeDuration);
+                fadeImage.color = c;
+                yield return null;
+            }
+        }
+
+        isTeleporting = false;
         isNearObject = false;
     }
 }
