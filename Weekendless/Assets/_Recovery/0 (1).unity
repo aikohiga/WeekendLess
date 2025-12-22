@@ -6214,6 +6214,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4423045620967985251, guid: 0192825ffddd45d4eb99c6240c892406, type: 3}
   m_PrefabInstance: {fileID: 913586228}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &249371059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249371057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aceeadb3f9e7bf64f93b0d29883cff05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeleportInteraction
+  interactionDistance: 3
+  playerCamera: {fileID: 522740964}
+  hintText: {fileID: 1494058440}
+  interactKey: 101
+  teleportTarget: {fileID: 414058557}
+  playerTransform: {fileID: 831770642}
+  fadeImage: {fileID: 592612790}
+  teleportSound: {fileID: 8300000, guid: 52bd8380abd16fb4f9b4761fbada0a43, type: 3}
+  fadeDuration: 3
+  teleportDelay: 0.5
 --- !u!65 &249371060
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6235,28 +6257,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.014442617, y: 0.0011877535, z: 0.033011142}
   m_Center: {x: 0.00000954629, y: -0.0001408388, z: -0.00021564306}
---- !u!114 &249371064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249371057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f791ba4edabae7647b54b81d5fa99c09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TeleportInteraction
-  interactionDistance: 3
-  playerCamera: {fileID: 522740964}
-  hintText: {fileID: 602199062}
-  interactKey: 101
-  teleportTarget: {fileID: 2060345317}
-  playerTransform: {fileID: 831770642}
-  fadeImage: {fileID: 592612790}
-  teleportSound: {fileID: 0}
-  fadeDuration: 1
-  teleportDelay: 0.5
 --- !u!1001 &250349885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9633,18 +9633,15 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3e250d4895a55654faa3178a2d77c9ae, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 515101143}
     - targetCorrespondingSourceObject: {fileID: 3514220960872266841, guid: 3e250d4895a55654faa3178a2d77c9ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 826930287}
     - targetCorrespondingSourceObject: {fileID: -7766406389635865431, guid: 3e250d4895a55654faa3178a2d77c9ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2146685970}
-    - targetCorrespondingSourceObject: {fileID: -7766406389635865431, guid: 3e250d4895a55654faa3178a2d77c9ae, type: 3}
+    - targetCorrespondingSourceObject: {fileID: -6670029091556204283, guid: 3e250d4895a55654faa3178a2d77c9ae, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2146685978}
+      addedObject: {fileID: 851681265}
   m_SourcePrefab: {fileID: 100100000, guid: 3e250d4895a55654faa3178a2d77c9ae, type: 3}
 --- !u!4 &392152562 stripped
 Transform:
@@ -12675,33 +12672,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 90db922839f79504c92f618008032e2b, type: 3}
   m_PrefabInstance: {fileID: 507237456}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &515101142 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3e250d4895a55654faa3178a2d77c9ae, type: 3}
-  m_PrefabInstance: {fileID: 392152561}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &515101143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515101142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9841292a78a45264d861cc6daccf333c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InstituteEntranceDoor
-  interactionDistance: 3
-  playerCamera: {fileID: 0}
-  hintText: {fileID: 0}
-  interactKey: 101
-  enterToInstitutePoint: {fileID: 0}
-  playerTransform: {fileID: 0}
-  fadeImage: {fileID: 0}
-  teleportSound: {fileID: 0}
-  fadeDuration: 1
-  teleportDelay: 0.5
 --- !u!1 &520415139
 GameObject:
   m_ObjectHideFlags: 0
@@ -13403,7 +13373,7 @@ MonoBehaviour:
   playerCamera: {fileID: 522740964}
   hintText: {fileID: 1494058440}
   interactKey: 101
-  exitToStreetPoint: {fileID: 0}
+  teleportTarget: {fileID: 1996522496}
   playerTransform: {fileID: 831770642}
   fadeImage: {fileID: 592612790}
   teleportSound: {fileID: 8300000, guid: 52bd8380abd16fb4f9b4761fbada0a43, type: 3}
@@ -24882,6 +24852,33 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &851681261 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6670029091556204283, guid: 3e250d4895a55654faa3178a2d77c9ae, type: 3}
+  m_PrefabInstance: {fileID: 392152561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &851681265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851681261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aceeadb3f9e7bf64f93b0d29883cff05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeleportInteraction
+  interactionDistance: 3
+  playerCamera: {fileID: 522740964}
+  hintText: {fileID: 0}
+  interactKey: 101
+  teleportTarget: {fileID: 414058557}
+  playerTransform: {fileID: 0}
+  fadeImage: {fileID: 0}
+  teleportSound: {fileID: 0}
+  fadeDuration: 1
+  teleportDelay: 0.5
 --- !u!1 &855395998 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a13781a3f45207a4b92721935bf8f151, type: 3}
@@ -27116,7 +27113,7 @@ PrefabInstance:
       addedObject: {fileID: 249371060}
     - targetCorrespondingSourceObject: {fileID: 4423045620967985251, guid: 0192825ffddd45d4eb99c6240c892406, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 249371064}
+      addedObject: {fileID: 249371059}
     - targetCorrespondingSourceObject: {fileID: 3272922989394223298, guid: 0192825ffddd45d4eb99c6240c892406, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2026770663}
@@ -57499,28 +57496,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.010047315, y: 0.0007304865, z: 0.03760289}
   m_Center: {x: -0.0050234273, y: 0.000000059604645, z: -0.0061125895}
---- !u!114 &2146685978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146685965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9841292a78a45264d861cc6daccf333c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InstituteEntranceDoor
-  interactionDistance: 3
-  playerCamera: {fileID: 522740964}
-  hintText: {fileID: 1494058440}
-  interactKey: 101
-  enterToInstitutePoint: {fileID: 414058557}
-  playerTransform: {fileID: 831770642}
-  fadeImage: {fileID: 592612790}
-  teleportSound: {fileID: 0}
-  fadeDuration: 1
-  teleportDelay: 0.5
 --- !u!4 &543450652116300612
 Transform:
   m_ObjectHideFlags: 0

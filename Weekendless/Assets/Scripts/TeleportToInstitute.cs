@@ -1,29 +1,36 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections;
 
-public class TeleportInteraction : MonoBehaviour
+public class InstituteEntranceDoor : MonoBehaviour
 {
-    [Header("��������� ��������������")]
+    [Header("=== НАСТРОЙКИ ДВЕРИ В ИНСТИТУТ ===")]
+    [Tooltip("Эта дверь ТОЛЬКО для входа в институт с улицы")]
     public float interactionDistance = 3f;
     public Camera playerCamera;
     public TMP_Text hintText;
     public KeyCode interactKey = KeyCode.E;
 
-    [Header("��������� ������������")]
-    public Transform teleportTarget;
+    [Header("Точка телепортации")]
+    [Tooltip("Перетащите сюда точку ВНУТРИ ИНСТИТУТА (не на улице!)")]
+    public Transform enterToInstitutePoint;
+
+    [Header("Игрок")]
     public Transform playerTransform;
 
-    [Header("������� ������������")]
+    [Header("Эффекты телепортации")]
     public Image fadeImage;
     public AudioClip teleportSound;
     public float fadeDuration = 1f;
     public float teleportDelay = 0.5f;
 
-    private bool isNearObject = false;
-    private bool isTeleporting = false;
+    private bool isNearThisDoor = false;
+    private bool isTeleportingFromThisDoor = false;
     private AudioSource audioSource;
+
+    private float doorCooldown = 2f;
+    private bool isOnCooldown = false;
 
     void Start()
     {
@@ -41,21 +48,20 @@ public class TeleportInteraction : MonoBehaviour
         if (audioSource == null)
             audioSource = gameObject.AddComponent<AudioSource>();
     }
-
     void Update()
     {
-        if (!isTeleporting)
+        if (!isTeleportingFromThisDoor && !isOnCooldown)
         {
-            CheckObject();
+            CheckThisDoorOnly();
 
-            if (isNearObject && Input.GetKeyDown(interactKey))
+            if (isNearThisDoor && Input.GetKeyDown(interactKey))
             {
-                StartCoroutine(TeleportSequence());
+                StartCoroutine(InstituteEntranceTeleportSequence());
             }
         }
     }
 
-    void CheckObject()
+    void CheckThisDoorOnly()
     {
         if (playerCamera == null) return;
 
@@ -64,36 +70,41 @@ public class TeleportInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, interactionDistance))
         {
-            if (hit.collider.CompareTag("Teleport"))
+            if (hit.collider.gameObject == this.gameObject)
             {
-                if (!isNearObject)
+                if (!isNearThisDoor)
                 {
-                    isNearObject = true;
+                    isNearThisDoor = true;
                     if (hintText != null)
+                    {
                         hintText.gameObject.SetActive(true);
+                        hintText.text = $"Нажмите {interactKey} чтобы войти в институт";
+                    }
                 }
                 return;
             }
         }
 
-        if (isNearObject)
+        if (isNearThisDoor)
         {
-            isNearObject = false;
+            isNearThisDoor = false;
             if (hintText != null)
                 hintText.gameObject.SetActive(false);
         }
     }
 
-    IEnumerator TeleportSequence()
+    IEnumerator InstituteEntranceTeleportSequence()
     {
-        isTeleporting = true;
+        isTeleportingFromThisDoor = true;
+        isOnCooldown = true;
 
         if (hintText != null)
             hintText.gameObject.SetActive(false);
 
         if (teleportSound != null && audioSource != null)
+        {
             audioSource.PlayOneShot(teleportSound);
-
+        }
         if (fadeImage != null)
         {
             float t = 0;
@@ -108,18 +119,25 @@ public class TeleportInteraction : MonoBehaviour
         }
 
         yield return new WaitForSeconds(teleportDelay);
-
-        if (playerTransform != null && teleportTarget != null)
+        if (playerTransform != null && enterToInstitutePoint != null)
         {
             CharacterController controller = playerTransform.GetComponent<CharacterController>();
+            bool hadController = false;
+
             if (controller != null)
+            {
+                hadController = true;
                 controller.enabled = false;
+            }
 
-            playerTransform.position = teleportTarget.position;
-            playerTransform.rotation = teleportTarget.rotation;
+            Vector3 oldPosition = playerTransform.position;
+            playerTransform.position = enterToInstitutePoint.position;
+            playerTransform.rotation = Quaternion.Euler(0, Random.Range(120, 240), 0);
 
-            if (controller != null)
+            if (hadController)
+            {
                 controller.enabled = true;
+            }
         }
 
         if (fadeImage != null)
@@ -134,8 +152,21 @@ public class TeleportInteraction : MonoBehaviour
                 yield return null;
             }
         }
+        isTeleportingFromThisDoor = false;
+        isNearThisDoor = false;
+        yield return new WaitForSeconds(doorCooldown);
+        isOnCooldown = false;
+    }
 
-        isTeleporting = false;
-        isNearObject = false;
+    void OnDrawGizmosSelected()
+    {
+        if (enterToInstitutePoint != null)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawLine(transform.position, enterToInstitutePoint.position);
+            Gizmos.DrawWireSphere(enterToInstitutePoint.position, 0.5f);
+            UnityEditor.Handles.Label(transform.position + Vector3.up * 0.5f, "ДВЕРЬ В ИНСТИТУТ");
+            UnityEditor.Handles.Label(enterToInstitutePoint.position + Vector3.up * 0.5f, "ТОЧКА В ИНСТИТУТЕ");
+        }
     }
 }
