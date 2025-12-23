@@ -6,7 +6,7 @@ public class QuestControllerFiveItems : MonoBehaviour
 {
     [Header("Настройки предметов")]
     [SerializeField] private List<string> requiredItems = new List<string>();
-    [SerializeField] private int maxItems = 5; // Изменено на 5
+    [SerializeField] private int maxItems = 5; 
 
     [Header("Целевой объект")]
     [SerializeField] private GameObject targetObject;
@@ -45,7 +45,6 @@ public class QuestControllerFiveItems : MonoBehaviour
 
     void Start()
     {
-        // Инициализация списка предметов, если он пустой
         if (requiredItems.Count == 0)
         {
             for (int i = 1; i <= maxItems; i++)
@@ -54,7 +53,6 @@ public class QuestControllerFiveItems : MonoBehaviour
             }
         }
 
-        // Находим игрока
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
@@ -65,14 +63,11 @@ public class QuestControllerFiveItems : MonoBehaviour
             Debug.LogWarning("Игрок не найден! Убедитесь, что у игрока есть тег 'Player'");
         }
 
-        // Инициализируем UI
         UpdateUI();
 
-        // Скрываем панель завершения
         if (completionPanel != null)
             completionPanel.SetActive(false);
 
-        // Настраиваем панель затемнения
         if (fadePanel != null)
         {
             Color c = fadePanel.color;
@@ -86,24 +81,19 @@ public class QuestControllerFiveItems : MonoBehaviour
     {
         if (questCompleted) return;
 
-        // Проверяем расстояние до целевого объекта
         bool wasNearTarget = isPlayerNearTarget;
         isPlayerNearTarget = IsPlayerNearTarget();
-
-        // Обновляем UI если состояние изменилось
         if (wasNearTarget != isPlayerNearTarget)
         {
             UpdateUI();
         }
 
-        // Проверяем возможность взаимодействия
         if (IsAllItemsCollected() && isPlayerNearTarget && Input.GetKeyDown(KeyCode.E))
         {
             CompleteQuest();
         }
     }
 
-    // Метод для подбора предмета
     public bool CollectItem(string itemName)
     {
         if (questCompleted) return false;
@@ -115,7 +105,6 @@ public class QuestControllerFiveItems : MonoBehaviour
 
             Debug.Log($"Предмет '{itemName}' подобран. Собрано: {collectedItems.Count}/{maxItems}");
 
-            // Проверяем, известен ли предмет
             if (requiredItems.Contains(itemName))
             {
                 Debug.Log($"Предмет '{itemName}' является одним из необходимых!");
@@ -127,13 +116,11 @@ public class QuestControllerFiveItems : MonoBehaviour
         return false;
     }
 
-    // Проверка, все ли предметы собраны
     private bool IsAllItemsCollected()
     {
         return collectedItems.Count >= maxItems;
     }
 
-    // Проверка, находится ли игрок рядом с целевым объектом
     private bool IsPlayerNearTarget()
     {
         if (playerTransform == null || targetObject == null) return false;
@@ -142,7 +129,6 @@ public class QuestControllerFiveItems : MonoBehaviour
         return distance <= interactionDistance;
     }
 
-    // Завершение квеста
     private void CompleteQuest()
     {
         if (questCompleted) return;
@@ -150,19 +136,15 @@ public class QuestControllerFiveItems : MonoBehaviour
         questCompleted = true;
         Debug.Log("Квест завершен! Все 5 предметов установлены.");
 
-        // Запускаем корутину для эффекта завершения
         StartCoroutine(QuestCompletionRoutine());
     }
 
-    // Корутина для эффекта завершения квеста
     private IEnumerator QuestCompletionRoutine()
     {
-        // Активируем панель затемнения
         if (fadePanel != null)
         {
             fadePanel.gameObject.SetActive(true);
 
-            // Плавное затемнение
             float elapsedTime = 0f;
             Color panelColor = fadePanel.color;
 
@@ -175,29 +157,20 @@ public class QuestControllerFiveItems : MonoBehaviour
             }
         }
 
-        // Показываем панель с текстом завершения
         if (completionPanel != null)
         {
             completionPanel.SetActive(true);
             SetText(completionTextComponent, completionMessage);
         }
 
-        // Дополнительная задержка перед следующими действиями
         yield return new WaitForSeconds(3f);
 
-        // Здесь можно добавить дополнительные действия:
-        // - Загрузку следующей сцены
-        // - Активацию новых объектов
-        // - Воспроизведение звука
     }
 
-    // Обновление UI
     private void UpdateUI()
     {
-        // Обновляем счетчик предметов
         SetText(itemCountTextComponent, string.Format(collectMessage, collectedItems.Count));
 
-        // Обновляем подсказку квеста
         if (questTextComponent != null)
         {
             string hintText;
@@ -210,7 +183,6 @@ public class QuestControllerFiveItems : MonoBehaviour
             {
                 hintText = startMessage;
 
-                // Можно добавить конкретные подсказки о недостающих предметах
                 if (collectedItems.Count > 0)
                 {
                     hintText += $"\nОсталось собрать: {maxItems - collectedItems.Count} предметов";
@@ -221,24 +193,19 @@ public class QuestControllerFiveItems : MonoBehaviour
         }
     }
 
-    // Универсальный метод для установки текста
     private void SetText(Component textComponent, string message)
     {
         if (textComponent == null) return;
 
-        // Проверяем тип текстового компонента
         System.Type componentType = textComponent.GetType();
 
-        // Стандартный UI Text
         if (componentType == typeof(UnityEngine.UI.Text))
         {
             ((UnityEngine.UI.Text)textComponent).text = message;
         }
-        // TextMeshPro
         else if (componentType.ToString().Contains("TMP_Text") ||
                  componentType.ToString().Contains("TextMeshProUGUI"))
         {
-            // Используем рефлексию для совместимости
             var prop = componentType.GetProperty("text");
             if (prop != null)
             {
@@ -251,7 +218,6 @@ public class QuestControllerFiveItems : MonoBehaviour
         }
     }
 
-    // Метод для проверки прогресса (можно вызвать из других скриптов)
     public int GetCollectedCount()
     {
         return collectedItems.Count;
@@ -267,7 +233,6 @@ public class QuestControllerFiveItems : MonoBehaviour
         return questCompleted;
     }
 
-    // Метод для сброса квеста (для отладки)
     public void ResetQuest()
     {
         collectedItems.Clear();
@@ -286,7 +251,6 @@ public class QuestControllerFiveItems : MonoBehaviour
         }
     }
 
-    // Визуализация радиуса взаимодействия в редакторе
     void OnDrawGizmosSelected()
     {
         if (targetObject != null)
